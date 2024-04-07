@@ -1,0 +1,35 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="./a.css" />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </header>
+    <body>
+        <section class="layout">
+            <div class="header">1</div>
+            <div class="leftSide">2</div>
+            <div class="body" id="app"> <button v-on:click="increment" class="buttonCls" >{{ message }} </button> </div>
+            <div class="rightSide">4</div>
+            <div class="footer">5</div>
+        </section>
+
+        <script>
+            const { createApp } = Vue
+
+            createApp({
+                data() {
+                    return {
+                        count: 1,
+                        hello: 'Hello Vue!',
+                        message: 'Hello Vue!'
+                    }
+                },
+                methods: {
+                    increment() {
+                        this.count++;
+                        this.message = this.hello + this.count
+                    }
+                }
+            }).mount('#app')
+        </script>
+    </body>
+</html>
